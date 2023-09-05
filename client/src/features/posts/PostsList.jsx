@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import { API_URL } from "../../constants";
+import React, { useState, useEffect } from "react";
+import { API_URL } from "../../../constants";
 
 function PostsList() {
   const [posts, setPosts] = useState([]);

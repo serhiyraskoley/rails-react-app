@@ -4,12 +4,15 @@ class Api::V1::PostsController < ApplicationController
   # GET /posts
   def index
     # @posts = Post.all
+
     @posts = Post.order(created_at: :desc)
+    
     render json: @posts
   end
 
   # GET /posts/1
   def show
+    sleep 3
     render json: @post
   end
 
