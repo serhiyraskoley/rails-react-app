@@ -31,8 +31,10 @@ function PostsList() {
     <div>
       {posts.map((post) => (
         <div key={post.id} className="post-container">
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
+          <h2 class="post-title">{post.title}</h2>
+          <p class="post-body">{post.body}</p>
+          {/* <p className="post-date">{Date(post.created_at).split("GMT+0300 (Eastern European Summer Time)")}</p> */}
+          <p className="post-date">{Date(post.created_at).split(/[0-9][0-9]:[0-9][0-9]:[0-9][0-9]\s.+/)}</p>
         </div>
       ))}
     </div>
