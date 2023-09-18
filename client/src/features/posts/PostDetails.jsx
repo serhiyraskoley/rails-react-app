@@ -27,9 +27,11 @@ function PostDetails() {
   if (!post) return <h2>Loading...</h2>;
 
   return (
-    <div>
+    <div className="post-container">
       <h2>{post.title}</h2>
       <p>{post.body}</p>
+      <Link to={`/posts/${post.id}/edit`}>Edit Post</Link>
+      <br />
       <Link to="/">Back to Posts</Link>
     </div>
   );
