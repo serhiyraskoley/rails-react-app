@@ -49,6 +49,10 @@ function PostDetails() {
       <h2 className="post-title">{post.title}</h2>
       <p className="post-body">{post.body}</p>
       <p className="post-date">{Date(post.created_at).split(/[0-9][0-9]:[0-9][0-9]:[0-9][0-9]\s.+/)}</p>
+      <h2>{post.title}</h2>
+      <p>{post.body}</p>
+      <Link to={`/posts/${post.id}/edit`}>Edit Post</Link>
+      <br />
       <Link to="/">Back to Posts</Link>
       {" | "}
       <button onClick={deletePost} className="submit-button">Delete</button>
