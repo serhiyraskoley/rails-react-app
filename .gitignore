@@ -34,3 +34,6 @@
 
 # Ignore sh file
 *.sh
+
+#Don't push up coverage dir
+coverage/
