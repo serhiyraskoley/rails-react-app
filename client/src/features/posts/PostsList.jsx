@@ -14,9 +14,10 @@ function PostsList() {
         const data = await fetchAllPosts();
         setPosts(data);
         setLoading(false);
-    } catch {
-        setError("An error occurred. Awkward...", e);
+    } catch (e) {
+        setError(e);
         setLoading(false);
+        console.error("Failed to fetch posts: ", e);
     }
   }
     loadPosts();
@@ -27,7 +28,7 @@ function PostsList() {
       await deletePost(id);
       setPosts(posts.filter((post) => post.id !== id));
     } catch (e) {
-      console.error("An delete error occurred:", e);
+      console.error("An delete error occurred: ", e);
       }
     };
 
