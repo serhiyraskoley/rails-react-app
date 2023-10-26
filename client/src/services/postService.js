@@ -50,16 +50,12 @@ async function deletePost(id) {
   const response = await fetch(`${API_URL}/${id}`, {
     method: 'DELETE',
   });
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-
+  
   if (response.status === 204) {
     return null;
-  } else {
-    return response.json()
-  }
-  
+  } 
+
+  throw new Error(response.statusText);
 }
 
 export { fetchAllPosts, fetchPost, createPost, deletePost, updatePost }
